@@ -1,0 +1,9 @@
+day20
+create a snake
+move the snake
+control the snake with (wasd)
+
+day21
+detecting collisions with food and creating the food object.
+create a  scoreboard
+detecting collisions with the wall\tail
