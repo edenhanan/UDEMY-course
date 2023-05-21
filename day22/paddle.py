@@ -8,9 +8,10 @@ class Paddle(Turtle):
         self.shapesize(stretch_len=1, stretch_wid=5)
         self.color("white")
         self.goto(player_position)
+        self.paddle_speed = 30
 
     def move_up(self):
-        self.goto(self.xcor(), (self.ycor() + 20))
+        self.goto(self.xcor(), (self.ycor() + self.paddle_speed))
 
     def move_down(self):
-       self.goto(self.xcor(), (self.ycor() - 20))
+       self.goto(self.xcor(), (self.ycor() - self.paddle_speed))

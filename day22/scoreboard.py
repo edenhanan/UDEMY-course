@@ -9,13 +9,24 @@ class Scoreboard(Turtle):
         self.hideturtle()
         self.penup()
         self.color("white")
-        self.score = 0
-        self.goto(0,270)
-        self.write(f"score: {self.score}",align=alignment,font=FONT)
+        self.Left_score = 0
+        self.Right_score = 0
+        self.update_scoreboard()
 
-    def add_point(self):
-        self.score += 1
+
+    def update_scoreboard(self):
         self.clear()
-        self.write(f"score: {self.score}", align=alignment,  font=FONT)
         
-        # the red fox jumpes over the yellow fance 
+        self.goto(-100,200)
+        self.write(self.Left_score,align=alignment,font=("Courier",80,"normal"))
+        self.goto(100,200)
+        self.write(self.Right_score,align=alignment,font=("Courier",80,"normal"))
+
+    def Left_point(self):
+        self.Left_score += 1
+        self.update_scoreboard()
+
+
+    def Right_point(self):
+        self.Right_score += 1
+        self.update_scoreboard()

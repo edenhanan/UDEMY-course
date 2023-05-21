@@ -1,5 +1,5 @@
 from turtle import Screen,  Turtle
-from .scoreboard import Scoreboard
+from scoreboard import Scoreboard
 
 from paddle import Paddle
 from ball import Ball
@@ -26,7 +26,7 @@ game_is_on = True
 while game_is_on:
     screen.update()
     ball.move()
-    time.sleep(0.1)
+    time.sleep(ball.movment_speed)
     if ball.ycor() > 280 or ball.ycor() <-280:
         ball.bouncey()
 
@@ -36,9 +36,11 @@ while game_is_on:
 
     if ball.xcor() > 390:
         ball.point()
+        scoreboard.Left_point()
 
     if ball.xcor() < -390:
         ball.point()
+        scoreboard.Right_point()
 
 screen.exitonclick()
 
